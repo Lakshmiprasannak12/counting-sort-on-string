@@ -1,0 +1,19 @@
+#counting sort using string
+PROGRAM:
+def csortString(s):
+    count=[0]*26
+    for char in s:
+        count[ord(char)- ord('a')]+=1
+    sorted_str= ' '
+    for i in range(26):
+        sorted_str+= chr(i+ord('a')) * count[i]
+    return sorted_str
+name=input("enter a single word")
+sorted_name=csortString(name)
+print("original string:",name)
+print("sorted string:",sorted_name)
+
+OUTPUT:
+enter a single word: prasanna
+original string: prasanna
+sorted string:  aaannprs
