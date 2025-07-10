@@ -1,4 +1,4 @@
-#counting sort using string
+#counting sort on string using lowercase letters
 PROGRAM:
 def csortString(s):
     count=[0]*26
@@ -17,3 +17,29 @@ OUTPUT:
 enter a single word: prasanna
 original string: prasanna
 sorted string:  aaannprs
+
+
+#counting sort on string using uppercase letters
+#program:
+def csortString(s):
+    count=[0]*26
+    for char in s:
+        count[ord(char)- ord('A')]+=1
+    sorted_str= ' '
+    for i in range(26):
+        sorted_str+= chr(i+ord('A')) * count[i]
+    return sorted_str
+name=input("enter a single word:")
+sorted_name=csortString(name)
+print("original string:",name)
+print("sorted string:",sorted_name)
+
+output:
+enter a single word: AMMULU
+original string: AMMULU
+sorted string:  ALMMUU
+
+
+
+
+
